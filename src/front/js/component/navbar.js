@@ -17,7 +17,7 @@ export const Navbar = () => {
 					{!store.token ? 
 					<div>
 					<Link to="/signup">
-						<button className="btn btn-primary signup">Sign up</button>
+						<button className="btn btn-success signup">Sign up</button>
 					</Link>	
 					<Link to="/login">
 						<button className="btn btn-primary">Log in</button>
