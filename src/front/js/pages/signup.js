@@ -91,7 +91,7 @@ export const Signup = () => {
 				  />
 				</div>
 				</div>
-				<button onClick={handleClick} className="btn btn-success w-100">
+				<button onClick={handleClick} type="button" className="btn btn-success w-100">
 				  <strong>Signup</strong>
 				</button>
 			  </form>

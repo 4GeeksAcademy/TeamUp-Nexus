@@ -48,9 +48,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				};
 				try{
-					const resp = await fetch("https://vigilant-waddle-jj549wp5r75xhj6qp-3001.app.github.dev/api/signup", opts)
+					const resp = await fetch(process.env.BACKEND_URL+"/api/signup", opts)
 					if(resp.status !== 200){
-						alert("There has been some error");
+						alert("There has been an sign up error. response code ",response.status);
 						return false;
 					} 
 				
@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return true;
 					}
 				catch(error){
-					console.error("There has been an error login in")
+					console.error("There has been an error signing up")
 				}
 			},
 
@@ -78,14 +78,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
  
 			try{
-				const resp = await fetch("https://vigilant-waddle-jj549wp5r75xhj6qp-3001.app.github.dev/api/token", opts)
+				const resp = await fetch(process.env.BACKEND_URL+"/api/token", opts)
 				if(resp.status !== 200){
-					alert("There has been some error");
+					alert("There has been a log in error. response code: ", response.status);
 					return false;
 				} 
 			
 					
 				const data = await resp.json();
+					console.log("access token: ",data)  
+					// never do this console log irl
 					sessionStorage.setItem("token", data.access_token);
 					setStore({ token: data.access_token})
 					return true;
