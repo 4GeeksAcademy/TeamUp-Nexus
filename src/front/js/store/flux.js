@@ -104,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Authorization": "Bearer " + store.token
 					}
 				};
-				fetch("https://vigilant-waddle-jj549wp5r75xhj6qp-3001.app.github.dev/api/hello", opts)
+				fetch(process.env.BACKEND_URL+"/api/hello", opts)
 					.then(resp => resp.json())
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
