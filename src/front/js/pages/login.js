@@ -18,6 +18,10 @@ export const Login = () => {
 
 	if(store.token && store.token != "" && store.token != undefined) navigate("/private");
 
+	const handleResetPasswordClick = () => {
+        // Use the navigate function to go to the "/Passreset" route
+        navigate("/Passreset");
+    };
 	return (
 		<div className="d-flex justify-content-center align-items-center bg-dark-purple vh-100">
 		  <div className="bg-white p-3 rounded w-25">
@@ -49,7 +53,7 @@ export const Login = () => {
 				<button onClick={handleClick} className="btn btn-success w-100">
 				  <strong>Login</strong>
 				</button>
-				<button className="btn btn-link mt-2 w-100">Forgot Password?</button>
+				<button onClick={handleResetPasswordClick} className="btn btn-link mt-2 w-100">Forgot Password?</button>
 			  </div>
 			)}
 		  </div>
