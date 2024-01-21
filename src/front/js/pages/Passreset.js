@@ -26,6 +26,7 @@ export const ResetPassword = () => {
   return (
     <div>
       <h2>Reset Password</h2>
+      <h2>Enter Email</h2>
       <input type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
       {/* Add input fields for security questions and answers */}
       <button onClick={handleResetPassword}>Reset Password</button>

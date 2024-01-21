@@ -10,6 +10,7 @@ import { ResetPassword } from "./pages/Passreset";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Private} from "./pages/private"
+import { Logout} from "./pages/logout"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -33,9 +34,10 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<ResetPassword />} path="/PassReset" />
-                        <Route element={< Signup />} path="/signup" />
+                        <Route element={<Signup />} path="/signup" />
                         <Route element={<Single />} path="/single/:theid" />
-                        <Route element={< Private />} path="/private" />
+                        <Route element={<Private />} path="/private" />
+                        <Route element={<Logout />} path="/logout" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
