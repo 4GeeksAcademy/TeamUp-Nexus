@@ -109,6 +109,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
 			},
+
+			// Add a new action for password reset
+resetPassword: async (email, securityQuestions) => {
+	const opts = {
+	  method: 'POST',
+	  headers: {
+		"Content-Type": "application/json"
+	  },
+	  body: JSON.stringify({
+		email: email,
+		securityQuestions: securityQuestions
+	  })
+	};
+	
+	try {
+	  const resp = await fetch(process.env.BACKEND_URL + "/api/reset-password", opts);
+	  if (resp.status !== 200) {
+		alert("There has been a password reset error. Response code: " + resp.status);
+		return false;
+	  }
+	  const data = await resp.json();
+	  // Handle the password reset response data as needed
+	  return true;
+	} catch (error) {
+	  console.error("There has been an error resetting the password", error);
+	  return false;
+	}
+  },
+  
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
