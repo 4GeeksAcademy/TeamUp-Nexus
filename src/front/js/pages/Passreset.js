@@ -12,6 +12,7 @@ export const ResetPassword = () => {
   const [a2, setA2] = useState("");
   const navigate = useNavigate();
   
+  
 
   useEffect(()=>{
     if (store.token && store.token != "" && store.token != undefined) navigate("/signup")

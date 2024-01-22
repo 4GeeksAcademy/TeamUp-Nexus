@@ -110,7 +110,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("Error loading message from backend", error));
 			},
 
-			// Add a new action for password reset
+			
 forgotPassword: async (email, securityQuestions) => { 
 	const opts = {
 	  method: 'POST',
