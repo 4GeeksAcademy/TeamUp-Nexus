@@ -9,7 +9,7 @@ export const Signup = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-	 
+	  
 
 	const [q1, setQ1] = useState("city");
 	const [q2, setQ2] = useState("pet");

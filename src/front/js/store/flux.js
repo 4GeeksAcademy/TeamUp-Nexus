@@ -111,7 +111,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			// Add a new action for password reset
-resetPassword: async (email, securityQuestions) => {
+forgotPassword: async (email, securityQuestions) => { 
 	const opts = {
 	  method: 'POST',
 	  headers: {
@@ -124,7 +124,7 @@ resetPassword: async (email, securityQuestions) => {
 	};
 	
 	try {
-	  const resp = await fetch(process.env.BACKEND_URL + "/api/reset-password", opts);
+	  const resp = await fetch(process.env.BACKEND_URL + "/api/forgot-password", opts);
 	  if (resp.status !== 200) {
 		alert("There has been a password reset error. Response code: " + resp.status);
 		return false;

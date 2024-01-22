@@ -15,7 +15,7 @@ from flask_jwt_extended import jwt_required
 api = Blueprint('api', __name__)
 
 
-
+ 
 # Allow CORS requests to this API
 CORS(api)
 
@@ -58,3 +58,14 @@ def get_hello():
         "message": "hello " + email
     }
     return jsonify(dictionary)
+
+
+@api.route("/forget-password", methods=["POST"])
+def forgot_password():
+    email = request.json.get("email", None)
+    security_questions = request.json.get ("securityQuestions", None)
+    user = User.query.filter_by(email = email).first()
+    if user is None : 
+        return jsonify({"msg": "User does not exist"}), 404
+    if security_questions.q1 == user.secret_question1 or security_questions.q1 == user.secret_question2 : 
+        if security_questions.a1 == user.secret_answer1 or security_questions.a1 == user.secret_answer2 : 

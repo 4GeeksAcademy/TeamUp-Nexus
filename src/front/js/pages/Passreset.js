@@ -15,12 +15,11 @@ export const ResetPassword = () => {
 
   useEffect(()=>{
     if (store.token && store.token != "" && store.token != undefined) navigate("/signup")
-  })
+  }) 
 
   const handleResetPassword = () => {
     let securityQuestions = { q1: q1, q2: q2, a1: a1, a2: a2 };
-    actions.resetPassword(email, securityQuestions);
-    // Add any additional logic for handling the password reset process
+    actions.forgotPassword(email, securityQuestions);
   };
 
   return (
@@ -28,7 +27,6 @@ export const ResetPassword = () => {
       <h2>Reset Password</h2>
       <h2>Enter Email</h2>
       <input type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      {/* Add input fields for security questions and answers */}
       <button onClick={handleResetPassword}>Reset Password</button>
     </div>
   );
