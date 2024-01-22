@@ -1,17 +1,83 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/TeamUp4.jpg";
+import rigoImageUrl from "../../img/Logomain.png";
+import rigoImageUrl2 from "../../img/TeamupnexusCallofduty.png";
+import rigoImageUrl3 from "../../img/TeamUpNexusDeadspace.png";
+import rigoImageUrl4 from "../../img/TeamUpNexusFortnite.png";
 import "../../styles/home.css";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Welcome to</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
+
+
+
+		<div class="container">
+
+			<div class="row justify-content-start">
+
+				<div class="background-container">
+
+
+
+					<div class="hero-image">
+
+						<div class="hero-text">
+							{<img src={rigoImageUrl} />}
+
+
+
+							<div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center">
+								{/* <div class="row "> */}
+								<div class="col-10">
+									<div className="card">
+
+										{<img src={rigoImageUrl3} />}
+									</div>
+								</div>
+								<div class="col-10">
+									<div className="card">
+
+										{<img src={rigoImageUrl2} />}
+									</div>
+								</div>
+								<div class="col">
+									<div className="card">
+
+										{<img src={rigoImageUrl4} />}
+
+										<div class="stars"></div>
+
+										<div class="container">
+
+										</div>
+
+									</div>
+
+
+								</div>
+								
+							</div>
+							<br/>
+							<br/>
+							<div class="d-flex justify-content-around">
+							<button> SING UP NOW
+								</button>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+					
+
+
+
+
+
+
+
+
 	);
 };

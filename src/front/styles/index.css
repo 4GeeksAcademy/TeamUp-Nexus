@@ -1,3 +1,5 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+
+body {
+    background-color: black;
+    background-image: ('src/front/img/gamerpower.jpeg');
+}

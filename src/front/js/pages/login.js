@@ -3,6 +3,8 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom"
 
 import "../../styles/home.css";
+import "../../styles/login.css";
+
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -30,7 +32,7 @@ export const Login = () => {
 			  "You have successfully logged in"
 			) : (
 			  <div>
-				<div className="mb-3">
+				<div className="input-container mb-3">
 				  <label htmlFor="email"><strong>Email</strong></label>
 				  <input
 					type="email"
@@ -40,7 +42,7 @@ export const Login = () => {
 					className="form-control rounded-0"
 				  />
 				</div>
-				<div className="mb-3">
+				<div className="input-container mb-3">
 				  <label htmlFor="password"><strong>Password</strong></label>
 					<input		
 					type="password"			
