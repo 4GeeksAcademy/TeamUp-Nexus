@@ -11,7 +11,7 @@ export const Home = () => {
 
 	return (
 
-
+// Images for Cards
 
 		<div class="container">
 
