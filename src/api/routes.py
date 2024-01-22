@@ -15,7 +15,7 @@ from flask_jwt_extended import jwt_required
 api = Blueprint('api', __name__)
 
 
-
+ 
 # Allow CORS requests to this API
 CORS(api)
 
@@ -58,3 +58,28 @@ def get_hello():
         "message": "hello " + email
     }
     return jsonify(dictionary)
+
+
+@api.route("/forget-password", methods=["POST"])
+def forgot_password():
+    email = request.json.get("email", None)
+    security_questions = request.json.get ("securityQuestions", None)
+
+    if email is None or security_questions is None:
+        return jsonify({"msg": "Please provide a valid email and security questions"}), 400
+    user = User.query.filter_by(email = email).first()
+    if user is None :
+        return jsonify({"msg": "User does not exist"}), 404
+
+    #scenario where they select the questions in the same order as when they signed up and they have the right answer
+    if security_questions.q1 == user.secret_question1 and security_questions.a1 == user.secret_answer1:
+        if security_questions.q2 == user.secret_question2 and security_questions.a2 == user.secret_answer2:
+            return jsonify({"msg":"success"}),200         
+    #scenario where they invert the order of the questions, but they have the right answers
+    elif security_questions.q1 == user.secret_question2 and security_questions.a1 == user.secret_answer2:
+        if security_questions.q2 == user.secret_question1 and security_questions.a2 == user.secret_answer1:
+            return jsonify({"msg":"success"}),200
+    else:
+        return jsonify({"msg":"the information provided does not match our database"}), 409 
+
+
