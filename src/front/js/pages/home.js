@@ -5,9 +5,21 @@ import rigoImageUrl2 from "../../img/TeamupnexusCallofduty.png";
 import rigoImageUrl3 from "../../img/TeamUpNexusDeadspace.png";
 import rigoImageUrl4 from "../../img/TeamUpNexusFortnite.png";
 import "../../styles/home.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
+	const navigate = useNavigate();
+
+	const handleSignup = () => {
+		actions.signup();
+		navigate("/signup");
+	  };
+	const handleLogin = () => {
+		actions.login();
+		navigate("/login");
+	  };
+
 
 	return (
 
@@ -61,10 +73,12 @@ export const Home = () => {
 							</div>
 							<br/>
 							<br/>
-							<div class="d-flex justify-content-around">
-							<button> SING UP NOW
-								</button>
-								</div>
+							<div class="d-flex justify-content-center align-items-center">
+  								<button onClick={handleSignup}>SignUp</button>
+							</div>
+							<div class="d-flex justify-content-center align-items-center">
+  								<button onClick={handleLogin}>Login</button>
+							</div>
 						</div>
 					</div>
 				</div>

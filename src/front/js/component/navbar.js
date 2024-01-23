@@ -8,7 +8,6 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     actions.logout();
-    // Redirect to "/logout" after logging out
     navigate("/logout");
   };
 
