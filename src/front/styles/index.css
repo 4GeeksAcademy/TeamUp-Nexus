@@ -1,5 +1,5 @@
 
 body {
     background-color: black;
-    background-image: ('src/front/img/gamerpower.jpeg');
+    background-image: url(../img/gamerpower.jpeg);
 }
