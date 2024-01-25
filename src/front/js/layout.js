@@ -10,7 +10,8 @@ import { ResetPassword } from "./pages/Passreset";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Private} from "./pages/private"
-import { Logout} from "./pages/logout"
+import { Logout } from "./pages/logout"
+import { Cod } from "./pages/CallofDutybtn"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -31,6 +32,7 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        <Route element={<Cod />} path="/callofduty" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<ResetPassword />} path="/PassReset" />
@@ -40,7 +42,7 @@ const Layout = () => {
                         <Route element={<Logout />} path="/logout" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
+                    {/* <Footer /> */}
                 </ScrollToTop>
             </BrowserRouter>
         </div>
