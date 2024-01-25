@@ -16,24 +16,24 @@ export const Navbar = () => {
   return (
     <nav className="navbar-expand-md navbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>
       <Link to="/home">
-        <span className="navbar-brand mb-0 h1" style={{ color: "#fff" }}><img src={Logo} height={150} width={225}/></span>
+        <span className="navbar-brand mb-0 h1" style={{ color: "#fff" }}><img src={Logo} height={150} width= {225}/></span>
       </Link>
       {/* <div className="navbar justify-left"> */}
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="btnnavbar">
-          <Link to="/home" className="btnnavbar, nav-link" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Home</Link>
+        <li>
+          <button to="/home" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Home</button>
         </li>
-        <li className="btnnavbar">
-          <Link to="/profile" className="nav-link" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Profile</Link>
+        <li>
+          <button to="/profile" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Profile</button>
         </li>
-        <li className="btnnavbar">
-          <Link to="/messages" className="nav-link" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</Link>
+        <li>
+          <button to="/messages" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</button>
         </li>
-        <li className="btnnavbar">
-          <Link to="/search" className="nav-link" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Search</Link>
+        <li>
+          <button to="/search" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Search</button>
         </li>
-        <li className="btnnavbar">
-          <Link to="/settings" className="nav-link" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Settings</Link>
+        <li>
+          <button to="/settings" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Settings</button>
         </li>
       </ul>
       {/* </div> */}
