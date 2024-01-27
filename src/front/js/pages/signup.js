@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom"
+import Logo from "../../img/Logo.png";
 
 import "../../styles/home.css";
 
@@ -28,8 +29,9 @@ export const Signup = () => {
 
 	return (
 		<div className="d-flex justify-content-center align-items-center bg-dark-purple vh-100">
-		  <div className="bg-white p-3 rounded w-25">
-			<h2>Signup for TeamUp Nexus</h2>
+		  <div className="bg-black p-3 rounded w-25">
+		  <img src={Logo} height={160} width= {350} ClassName= "logo22"/>
+			<h2 className="signupTitle">Signup for TeamUp Nexus</h2>
 			{store.token && store.token !== "" && store.token !== undefined ? (
 			  "You are now signed up!"
 			) : (
@@ -92,7 +94,7 @@ export const Signup = () => {
 				  />
 				</div>
 				</div>
-				<button onClick={handleClick} type="button" className="btn btn-success w-100">
+				<button onClick={handleClick} type="button" className="btn btn-dark w-100">
 				  <strong>Signup</strong>
 				</button>
 			  </form>

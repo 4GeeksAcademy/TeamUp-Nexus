@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar-expand-md navbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>
       <Link to="/">
-        <span className="navbar-brand mb-0 h1" style={{ color: "#fff" }}><img src={Logo} height={150} width= {225}/></span>
+        <span className="navbar-brand mb-0 h1" style={{ color: "#fff" }}><img src={Logo} height={120} width= {225}/></span>
       </Link>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li>

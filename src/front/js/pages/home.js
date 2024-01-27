@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/Logomain.png";
+import rigoImageUrl from "../../img/logomain2.png";
 import rigoImageUrl2 from "../../img/TeamupnexusCallofduty.png";
 import rigoImageUrl3 from "../../img/TeamUpNexusDeadspace.png";
 import rigoImageUrl4 from "../../img/TeamUpNexusFortnite.png";
@@ -14,16 +14,16 @@ export const Home = () => {
 	const handleSignup = () => {
 		actions.signup();
 		navigate("/signup");
-	  };
+	};
 	const handleLogin = () => {
 		actions.login();
 		navigate("/login");
-	  };
+	};
 
 
 	return (
 
-// Images for Cards
+		// Images for Cards
 
 		<div class="container">
 
@@ -35,8 +35,25 @@ export const Home = () => {
 
 					<div class="hero-image">
 
+
 						<div class="hero-text">
+
+
+							{/* <h1> Forge Friendships,<h2>Conquer Challenges, and Level Up Together!</h2></h1> */}
+
+							<p className="mainTitle">
+							   Where Gamers Unite: Forge Friendships
+								<span>
+								Conquer Challenges
+								</span>
+								and Level Up Together!
+							</p>
 							{<img src={rigoImageUrl} />}
+							<br/>
+							<br/>
+							<br/>
+
+
 
 
 
@@ -69,22 +86,22 @@ export const Home = () => {
 
 
 								</div>
-								
+
 							</div>
-							<br/>
-							<br/>
+							<br />
+							<br />
 							<div class="d-flex justify-content-center align-items-center">
-  								<button onClick={handleSignup}>SignUp</button>
+								<button className="glowing" onClick={handleSignup}>SignUp</button>
 							</div>
 							<div class="d-flex justify-content-center align-items-center">
-  								<button onClick={handleLogin}>Login</button>
+								<button className="glowing" onClick={handleLogin}>Login</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-					
+
 
 
 
