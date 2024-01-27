@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/Logomain.png";
+import rigoImageUrl from "../../img/logomain2.png";
 import rigoImageUrl2 from "../../img/TeamupnexusCallofduty.png";
 import rigoImageUrl3 from "../../img/TeamUpNexusDeadspace.png";
 import rigoImageUrl4 from "../../img/TeamUpNexusFortnite.png";
@@ -37,13 +37,23 @@ export const Home = () => {
 
 
 						<div class="hero-text">
-							
 
-						<h1>Where Gamers Unite: Forge Friendships,<h2>Conquer Challenges, and Level Up Together!</h2></h1>
 
+							{/* <h1> Forge Friendships,<h2>Conquer Challenges, and Level Up Together!</h2></h1> */}
+
+							<p>
+							   Where Gamers Unite: Forge Friendships
+								<span>
+								Conquer Challenges
+								</span>
+								and Level Up Together!
+							</p>
 							{<img src={rigoImageUrl} />}
+							<br/>
+							<br/>
+							<br/>
 
-							
+
 
 
 
