@@ -53,7 +53,7 @@ export const Private = () => {
           </div>
           <div className="button-wrapper">
             <button className="btn outline">DETAILS</button>
-            <button className="btn fill">ACCESS NOW</button>
+            <button onClick={handleGame} className="btn fill">ACCESS NOW</button>
           </div>
 
         </div>

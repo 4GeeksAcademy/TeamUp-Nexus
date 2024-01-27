@@ -41,7 +41,7 @@ export const Home = () => {
 
 							{/* <h1> Forge Friendships,<h2>Conquer Challenges, and Level Up Together!</h2></h1> */}
 
-							<p>
+							<p className="mainTitle">
 							   Where Gamers Unite: Forge Friendships
 								<span>
 								Conquer Challenges

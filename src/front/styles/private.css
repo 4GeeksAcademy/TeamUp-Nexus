@@ -61,7 +61,7 @@
   
 }
 
-p {
+.smalltitle {
   color: #fff;
   font-family: 'Lato', sans-serif;
   text-align: center;
@@ -105,8 +105,8 @@ p {
 }
 
 .fill {
-  background: rgba(161, 2, 159, 0.9);
-  color: rgba(255, 95, 95, 0.95);
+  background: rgba(240, 112, 0, 0.9);
+  color: rgba(38, 15, 15, 0.95);
   filter: drop-shadow(0);
   font-weight: bold;
   transition: all .3s ease; 

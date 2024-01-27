@@ -29,7 +29,7 @@ export const Login = () => {
 		<div className="d-flex justify-content-center align-items-center bg-dark-purple vh-100">
 		  <div className="bg-white p-3 rounded w-25">
 		  <img src={Logo} height={160} width= {350} ClassName= "logo22"/>
-			<h2>Login</h2>
+			<h2 className="loginTitle">Login</h2>
 			{store.token && store.token !== "" && store.token !== undefined ? (
 			  "You have successfully logged in"
 			) : (
