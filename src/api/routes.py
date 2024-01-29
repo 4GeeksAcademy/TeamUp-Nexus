@@ -4,12 +4,12 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
-from api.utils import generate_sitemap, APIException
-from flask_cors import CORS
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_cors import CORS
+from api.models import db, User
+from api.utils import generate_sitemap, APIException
 
 
 api = Blueprint('api', __name__)
@@ -80,6 +80,6 @@ def forgot_password():
         if security_questions.q2 == user.secret_question1 and security_questions.a2 == user.secret_answer1:
             return jsonify({"msg":"success"}),200
     else:
-        return jsonify({"msg":"the information provided does not match our database"}), 409 
+        return jsonify({"msg":"the information provided does not match our database"}), 409
 
 
