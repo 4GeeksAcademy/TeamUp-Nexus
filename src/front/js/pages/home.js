@@ -60,25 +60,25 @@ export const Home = () => {
 							<div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center">
 								{/* <div class="row "> */}
 								<div class="col-10">
-									<div className="card">
+									<div class="card custom-card-class">
 
-										{<img src={rigoImageUrl3} />}
+										{<img src={rigoImageUrl3} alt className = "cod1" />} 
 									</div>
 								</div>
 								<div class="col-10">
-									<div className="card">
+									<div class="card custom-card-class">
 
 										{<img src={rigoImageUrl2} />}
 									</div>
 								</div>
 								<div class="col">
-									<div className="card">
+									<div class="card custom-card-class">
 
 										{<img src={rigoImageUrl4} />}
 
 										<div class="stars"></div>
 
-										<div class="container">
+										<div class="container ">
 
 										</div>
 
