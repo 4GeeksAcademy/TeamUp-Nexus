@@ -105,7 +105,7 @@
 }
 
 .fill {
-  background: rgba(240, 112, 0, 0.9);
+  background: #f07000e6;
   color: rgba(38, 15, 15, 0.95);
   filter: drop-shadow(0);
   font-weight: bold;

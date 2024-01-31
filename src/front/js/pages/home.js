@@ -90,25 +90,11 @@ export const Home = () => {
 							</div>
 							<br />
 							<br />
-							<div class="d-flex justify-content-center align-items-center">
-								<button className="glowing" onClick={handleSignup}>SignUp</button>
-							</div>
-							<div class="d-flex justify-content-center align-items-center">
-								<button className="glowing" onClick={handleLogin}>Login</button>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
 
 	);
 };

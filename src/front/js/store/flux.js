@@ -33,8 +33,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log("You have logged out")
 				setStore({ token: null, message: null});
 			},
+			
 			game: () => {
 				
+			},
+
+			gameselection: () => {
+
 			},
 
 			signup: async(email,password, securityQuestions) => {

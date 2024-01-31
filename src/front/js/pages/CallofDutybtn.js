@@ -170,9 +170,6 @@ export const Cod = () => {
              <div class="d-flex justify-content-evenly bottom">
              <button className="btn btn-outline-success btn-rounded btn-sm">Send Message</button>
                <button className="btn btn-info btn-rounded btn-sm">Learn More!</button>
-        
-      
-         
          </div>
 
         
