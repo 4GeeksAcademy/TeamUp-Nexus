@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "../../styles/CallofDutybtn.css";
-import gamesmx1 from "../../img/gamesm1.png";
-import gamesmx2 from "../../img/gamesm2.png";
-import gamesmx3 from "../../img/gamesm3.png";
-import gamesmx4 from "../../img/gamesm4.png";
+
+
+import React, { useEffect, useState } from 'react';
+import Learnmore from '/workspaces/TeamUp-Nexus/src/front/js/component/Learnmore.js';
+import Message from '/workspaces/TeamUp-Nexus/src/front/js/component/SendAmessage.js';
+import '../../styles/CallofDutybtn.css';
+import { Overlay, Popover, Button, Form, Alert } from 'react-bootstrap';
 
 export const Cod = () => {
   const [playerStats, setPlayerStats] = useState(null);
-  const [filterLevelRange, setFilterLevelRange] = useState("");
-  const [filterKDRatioRange, setFilterKDRatioRange] = useState("");
+  const [filterLevelRange, setFilterLevelRange] = useState('');
+  const [filterKDRatioRange, setFilterKDRatioRange] = useState('');
   const [pageNumber, setPageNumber] = useState(1000);
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
+  const [showMessageModal, setShowMessageModal] = useState(false);
 
   useEffect(() => {
     const fetchData = () => {
@@ -58,6 +61,9 @@ export const Cod = () => {
     return filteredEntries;
   };
 
+  const handleContactClick = () => {
+    setShowMessageModal(true);
+  };
 
   const levelRanges = [
     "1-50",
@@ -79,227 +85,101 @@ export const Cod = () => {
   ];
 
   return (
-    // <>
-
-      <div class="row">
-         {/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Player stat starts  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
-         <div class="container">
-        <h1><i class="fa-solid fa-shield-halved"></i>Player Stats</h1>
-        <br/>
-            <div class="Playerstats">
-             
-              <label>
-                Filter by Level Range:
-              
-                <select
-                  value={filterLevelRange}
-                  onChange={(e) => setFilterLevelRange(e.target.value)}
-                className="select-classic">
-                  <option value="">All</option>
-                  <td/>
-                  {levelRanges.map((range, index) => (
-                    <option key={index} value={range}>
-                      {range}
-                    </option>
- 
- 
-
-
-                  ))}
-
-                   
-                </select>
-              </label>
-              <label >
-                Filter by K/D Ratio Range:
-                <select
-                  value={filterKDRatioRange}
-                  onChange={(e) => setFilterKDRatioRange(e.target.value)}
-                >
-                  <option value="">All</option>
-                  {kdRatioRanges.map((range, index) => (
-                    <option key={index} value={range}>
-                      {range}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Page Number:
-                <input
-                  type="number"
-                  value={pageNumber}
-                  onChange={(e) => setPageNumber(e.target.value)}
-                />
-              </label>
-            </div>
-            </div>
-           
-            <hr class="gradient"></hr>
-
-{/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Player stat starts  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */}
-        <div class="col-sm-10">
-        
-
-
-
-            <div className="card-container " style={{ display: "flex", flexWrap: "wrap" }}>
-            
-              {filterEntries().map((entry, index) => (
-         <div key={index} className="card" style={{ flex: "0 0 23%", marginRight: "1%", marginBottom: "20px" }}>
-           <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-           <div class="topcard">
-	<span class="pro">PRO</span>
-             <img
-               className="card-img-top"
-               src={`https://robohash.org/${entry.username}.png?size=200x200`}
-               alt={`Card ${index}`}
-               style={{ width: "20%", height: "50" }}
-             />
-           </div>
-           </div>
-           <div className="card-body justify-content-evenly">
-             <p className="card-title"><i class="fa-solid fa-circle-user"></i><strong>Username: </strong>{`${entry.username || 'N/A'}`}</p>
-             <p className="card-text"><i class="fa-solid fa-percent"></i><strong>K/D Ratio:</strong>{`${entry.values.kdRatio || 'N/A'}`}</p>
-             <p className="card-text">
-             <i class="fa-brands fa-connectdevelop"></i><strong>Level:</strong> {`${entry.values.level || 'N/A'}`}
-             </p>
-             <p className="card-text"><i class="fa-solid fa-trophy"> </i><strong>Wins: </strong>{`${entry.values.wins || 'N/A'}`}</p>
-             {/* <div style={{ display: "flex", justifyContent: "space-between" }}> */}
-             </div>
-             <div class="d-flex justify-content-evenly bottom">
-             <button className="btn btn-outline-success btn-rounded btn-sm">Send Message</button>
-               <button className="btn btn-info btn-rounded btn-sm">Learn More!</button>
-         </div>
-
-        
-         
-   
-       
-              </div>
-
-
+    <div className="row">
+      <div className="container">
+        <h1><i className="fa-solid fa-shield-halved"></i>Player Stats</h1>
+        <br />
+        <div className="Playerstats">
+          <label>
+            Filter by Level Range:
+            <select
+              value={filterLevelRange}
+              onChange={(e) => setFilterLevelRange(e.target.value)}
+              className="select-classic">
+              <option value="">All</option>
+              {levelRanges.map((range, index) => (
+                <option key={index} value={range}>
+                  {range}
+                </option>
               ))}
-           
-         
-           
+            </select>
+          </label>
+          <label>
+            Filter by K/D Ratio Range:
+            <select
+              value={filterKDRatioRange}
+              onChange={(e) => setFilterKDRatioRange(e.target.value)}
+            >
+              <option value="">All</option>
+              {kdRatioRanges.map((range, index) => (
+                <option key={index} value={range}>
+                  {range}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Page Number:
+            <input
+              type="number"
+              value={pageNumber}
+              onChange={(e) => setPageNumber(e.target.value)}
+            />
+          </label>
+        </div>
+      </div>
+      <hr className="gradient"></hr>
+
+      <div className="col-sm-10 mx-auto">
+        <div className="card-container " style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {filterEntries().map((entry, index) => (
+            <div key={index} className="card" style={{ flex: '0 0 23%', marginRight: '1%', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div className="topcard">
+                  <span className="pro">PRO</span>
+                  <img
+                    className="card-img-top"
+                    src={`https://robohash.org/${entry.username}.png?size=200x200`}
+                    alt={`Card ${index}`}
+                    style={{ width: "20%", height: "50" }}
+                  />
+                </div>
               </div>
-   
+              <div className="card-body justify-content-evenly">
+                <p className="card-title"><i className="fa-solid fa-circle-user"></i><strong>Username: </strong>{`${entry.username || 'N/A'}`}</p>
+                <p className="card-text"><i className="fa-solid fa-percent"></i><strong>K/D Ratio:</strong>{`${entry.values.kdRatio || 'N/A'}`}</p>
+                <p className="card-text">
+                  <i className="fa-brands fa-connectdevelop"></i><strong>Level:</strong> {`${entry.values.level || 'N/A'}`}
+                </p>
+                <p className="card-text"><i className="fa-solid fa-trophy"> </i><strong>Wins: </strong>{`${entry.values.wins || 'N/A'}`}</p>
               </div>
-                         {/* <div class="col-sm-2">
-                         <div className="top-downloaded">
-                    <div className="heading-section">
-
-
-
-
-                        <h4 className="Heading text-center">
-                            Top Downloaded
-                        </h4>
-                    </div>
-
-
-
-
-                    <br />
-
-
-
-
-                    <ul className="holder">
-
-                        <li className="Callofduty">
-                            <img src={gamesmx1} alt Class="templatemo-item" />
-                            <h4>Call of Duty </h4>
-                            <h6>Sandbox
-                            </h6>
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-
-
-
-
-                                4.9
-                            </span>
-                            <span><i class="fa fa-download"> </i></span>
-                            "2.2M"
-
-                        </li>
-
-
-
-                        <li className="Callofduty">
-                            <img src={gamesmx2} alt Class="templatemo-item" />
-                            <h4>Call of Duty </h4>
-                            <h6>Sandbox
-                            </h6>
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-
-
-
-
-                                4.9
-                            </span>
-                            <span><i class="fa fa-download"> </i></span>
-                            "2.2M"
-
-
-
-
-                        </li>
-
-
-                        <li className="Callofduty">
-                            <img src={gamesmx3} alt Class="templatemo-item" />
-                            <h4>Call of Duty </h4>
-                            <h6>Sandbox
-                            </h6>
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-
-
-
-
-                                4.9
-                            </span>
-                            <span><i class="fa fa-download"> </i></span>
-                            "2.2M"
-
-                        </li>
-
-
-
-                        <li className="Callofduty">
-                            <img src={gamesmx4} alt Class="templatemo-item" />
-                            <h4>Call of Duty </h4>
-                            <h6>Sandbox
-                            </h6>
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-
-
-
-
-                                4.9
-                            </span>
-                            <span><i class="fa fa-download"> </i></span>
-                            "2.2M"
-                        </li>
-
-
-
-                    </ul>
-
-                </div> */}
-
+              <div className="d-flex justify-content-evenly bottom">
+                <button className="btn btn-outline-success btn-rounded btn-sm" onClick={handleContactClick}>
+                  Contact this gamer
+                </button>
+                <Learnmore
+                  placement="top"
+                  title={`${entry.username}'s Details`}
+                  content={{
+                    killstreak: entry.values.killstreak,
+                    accuracy: entry.values.accuracy,
+                    losses: entry.values.losses,
+                    timePlayed: entry.values.timePlayed,
+                    headshots: entry.values.headshots,
+                    gamesPlayed: entry.values.gamesPlayed,
+                    scorePerMinute: entry.values.scorePerMinute,
+                  }}
+                  onContactClick={handleContactClick}
+                />
+              </div>
             </div>
-        // </div>
+          ))}
+        </div>
+      </div>
 
-
-           
-          // </>
-          );
+      {showMessageModal && <Message show={showMessageModal} handleClose={() => setShowMessageModal(false)} />}
+    </div>
+  );
 };
 
-          export default Cod;
+export default Cod;

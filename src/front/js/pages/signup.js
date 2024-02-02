@@ -46,9 +46,6 @@ export const Signup = () => {
 					"You are now signed up!"
 				) : (
 					<form className="text-start mx-1 mx-md-4">
-
-
-
 						<div className="mb-3 form-control-sm  ">
 							<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
 							<label htmlFor="email ">
@@ -62,8 +59,6 @@ export const Signup = () => {
 								className="form-control rounded-0"
 							/>
 						</div>
-
-
 						<div className="mb-3 form-control-sm">
 							<label htmlFor="password">
 								<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -77,10 +72,6 @@ export const Signup = () => {
 								className="form-control rounded-0"
 							/>
 						</div>
-
-
-
-
 						<div>
 							<div className="mb-3 pb-2 form-control-sm">
 								<label>
@@ -99,10 +90,6 @@ export const Signup = () => {
 									className="form-control rounded-0"
 								/>
 							</div>
-
-
-
-
 							<div className="mb-3 form-control-sm">
 								<label>
 									<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -120,26 +107,13 @@ export const Signup = () => {
 									className="form-control rounded-0"
 								/>
 							</div>
-
-
-
-
-
 						</div>
-
 						<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 							<button onClick={handleClick} type="button" className="btn btn-dark w-100">
 								<strong>Signup</strong>
 							</button>
 						</div>
-
-
-
-
-
 					</form>
-
-
 				)}
 			</div>
 		</div>

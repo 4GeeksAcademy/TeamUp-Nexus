@@ -21,7 +21,7 @@ export const Navbar = () => {
       {store.token && (
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
-            <Link to="/home" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Home</Link>
+            <Link to="/private" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Games</Link>
           </li>
           <li>
             <Link to="/profile" className="btnnavbar" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Profile</Link>
