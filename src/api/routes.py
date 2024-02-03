@@ -4,7 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
  
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User,PlayerProfile
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token
@@ -117,5 +117,3 @@ def get_player_profiles():
 
 if __name__ == '__main__':
     app.run()
-
-

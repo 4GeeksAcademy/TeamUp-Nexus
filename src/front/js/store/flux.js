@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			playerFav:[],
 		},
 		actions: {
 			exampleFunction: () => {
@@ -144,7 +145,29 @@ forgotPassword: async (email, securityQuestions) => {
 	  return false;
 	}
   },
-  
+  addPlayerProfile:(event)=>{
+	const store = getStore()
+	const playerFav = getStore().playerFav
+	const options = {
+		method: 'POST',
+		headers: {
+			"Content-Type": "application/json",
+			"Authorization": "Bearer " + store.token
+		},
+		body: JSON.stringify({
+			// eventId: event.id,
+			// favoriteType: "event",
+			// event_name: event.name,
+		})
+	}
+	// fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
+	// 	.then((response) => response.json())
+	// 	.then((data) => {
+	// 		favorites.push(event)
+	// 		setStore({ currentUser: data.favorites })
+	// 		console.log("hello from addFavorite() ", data)
+	// 	})
+  },
 
 			changeColor: (index, color) => {
 				//get the store
