@@ -81,6 +81,41 @@ def forgot_password():
             return jsonify({"msg":"success"}),200
     else:
         return jsonify({"msg":"the information provided does not match our database"}), 409 
+
+# Favorite Player Profile
     
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///player_profiles.db'
+db.init_app(app)
+
+@app.route('/player-profiles', methods=['POST'])
+def create_player_profile():
+    data = request.json
+    new_profile = PlayerProfile(
+        username=data['username'],
+        kd_ratio=data['kd_ratio'],
+        level=data['level'],
+        wins=data['wins']
+    )
+    db.session.add(new_profile)
+    db.session.commit()
+    return jsonify({'message': 'Player profile created successfully'}), 201
+
+@app.route('/player-profiles', methods=['GET'])
+def get_player_profiles():
+    profiles = PlayerProfile.query.all()
+    result = []
+    for profile in profiles:
+        result.append({
+            'id': profile.id,
+            'username': profile.username,
+            'kd_ratio': profile.kd_ratio,
+            'level': profile.level,
+            'wins': profile.wins
+        })
+    return jsonify(result)
+
+if __name__ == '__main__':
+    app.run()
 
 
