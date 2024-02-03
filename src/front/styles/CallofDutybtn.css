@@ -252,13 +252,13 @@ h3 {
   font-weight: 500;
 }
 
-span {
+/* span {
   font-size: 18px;
   font-weight: 500;
   color: #888;
   text-transform: capitalize;
   margin-bottom: 30px;
-}
+} */
 
 .box-container1 {
   display: flex;

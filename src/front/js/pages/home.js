@@ -15,6 +15,8 @@ import controller from "../../img/controller.png";
 import monitor from "../../img/monitor.png";
 import lbullets from "../../img/Leftullets.png";
 import rbullets from "../../img/leftside.png";
+import rsoldier from "../../img/ontheright.png";
+import lsodier from "../../img/ontheleft.png";
 
 import "../../styles/home.css";
 import "../../styles/style.scss";
@@ -61,7 +63,13 @@ export const Home = () => {
 						<div>
 						{<img src={lbullets} height={320} width= {900} className="lbullets"/>}
 						{<img src={rbullets} height={320} width= {900} className="rside" />}
+						{<img src={rsoldier} height={500} width= {395} className="soldier1" />}
+						{<img src={lsodier} height={571} width= {431} className="soldier2" />}
 						</div>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
 						<br/>
 						<br/>
 						
@@ -82,7 +90,7 @@ export const Home = () => {
 
 
 						{/* <!-- do section --> */}
-  <section class="do_section layout_padding">
+  {/* <section class="do_section layout_padding">
     <div class="container">
       <div class="custom_heading-container">
       
@@ -154,14 +162,26 @@ export const Home = () => {
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
+
+
+	
 
   {/* <!-- end do section --> */}
+  <br/><br/><br/>
+
+  <div class="tdownloaded2">
+		<span data-text="Top Downloaded" class="spantext"></span>
+		<span data-text="Games" class="spantext"></span>
+	</div>
 
 
 
 
 
+						<br/>
+						<br/>
+						<br/>
 						<br/>
 
 
