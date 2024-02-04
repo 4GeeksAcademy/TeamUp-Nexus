@@ -86,10 +86,11 @@ export const Cod = () => {
 
   return (
     <div className="row">
-      <div className="container">
-        <h1><i className="fa-solid fa-shield-halved"></i>Player Stats</h1>
+      <div class="d-flex align-content-center flex-wrap">
+        <h1 class="Playerstats1"><i className="fa-solid fa-shield-halved"></i>Player Stats</h1>
+        
         <br />
-        <div className="Playerstats">
+        <div className="Playerstats2">
           <label>
             Filter by Level Range:
             <select
@@ -127,7 +128,8 @@ export const Cod = () => {
             />
           </label>
         </div>
-      </div>
+        </div>
+      
       <hr className="gradient"></hr>
 
       <div className="col-sm-10 mx-auto">
@@ -155,7 +157,7 @@ export const Cod = () => {
               </div>
               <div className="d-flex justify-content-evenly bottom">
                 <button className="btn btn-outline-success btn-rounded btn-sm" onClick={handleContactClick}>
-                  Contact this gamer
+                  Send Message
                 </button>
                 <Learnmore
                   placement="top"

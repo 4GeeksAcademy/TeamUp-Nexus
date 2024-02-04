@@ -8,7 +8,7 @@ export const Logout = () => {
 
 	return (
 		<div className="d-flex justify-content-center align-items-center bg-dark-purple vh-100">
-		<div className=" bg-secondary rounded w-25 text-dark ">
+		 <div className="bg-secondary rounded text-dark p-4" style={{ maxWidth: "400px" }}>
 		  <img src={Logo} height={125} width={280} ClassName="logo22" />
 	
 		  <p>

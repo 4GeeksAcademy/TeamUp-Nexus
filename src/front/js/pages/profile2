@@ -12,104 +12,116 @@ export const Profile = () => {
     const [bio, setBio] = useState("");
 
     const handleSaveChanges = () => {
-        
         console.log("Changes saved:", { firstName, lastName, email, phoneNumber, streetAddress, city, state, zipCode, bio });
     };
 
     return (
-        <div className="text-center mt-5">
-            <h1>Your Profile</h1>
+        <div className="container mt-5">
+            <h1 className="text-center mb-4">Your Profile</h1>
 
-            <div>
-                <label htmlFor="firstName">First Name:</label>
-                <input
-                    type="text"
-                    id="firstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
+            <div className="row mb-3">
+                <div className="col">
+                    <label htmlFor="firstName" className="form-label">First Name:</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        className="form-control"
+                    />
+                </div>
+
+                <div className="col">
+                    <label htmlFor="lastName" className="form-label">Last Name:</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className="form-control"
+                    />
+                </div>
             </div>
 
-            <div>
-                <label htmlFor="lastName">Last Name:</label>
-                <input
-                    type="text"
-                    id="lastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-            </div>
-
-            <div>
-                <label htmlFor="email">Email:</label>
+            <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email:</label>
                 <input
                     type="email"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="form-control"
                 />
             </div>
 
-            <div>
-                <label htmlFor="phoneNumber">Phone Number:</label>
+            <div className="mb-3">
+                <label htmlFor="phoneNumber" className="form-label">Phone Number:</label>
                 <input
                     type="tel"
                     id="phoneNumber"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="form-control"
                 />
             </div>
 
-            <div>
-                <label htmlFor="streetAddress">Street Address:</label>
+            <div className="mb-3">
+                <label htmlFor="streetAddress" className="form-label">Street Address:</label>
                 <input
                     type="text"
                     id="streetAddress"
                     value={streetAddress}
                     onChange={(e) => setStreetAddress(e.target.value)}
+                    className="form-control"
                 />
             </div>
 
-            <div>
-                <label htmlFor="city">City:</label>
-                <input
-                    type="text"
-                    id="city"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
+            <div className="row mb-3">
+                <div className="col">
+                    <label htmlFor="city" className="form-label">City:</label>
+                    <input
+                        type="text"
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        className="form-control"
+                    />
+                </div>
+
+                <div className="col">
+                    <label htmlFor="state" className="form-label">State:</label>
+                    <input
+                        type="text"
+                        id="state"
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        className="form-control"
+                    />
+                </div>
+
+                <div className="col">
+                    <label htmlFor="zipCode" className="form-label">Zip Code:</label>
+                    <input
+                        type="text"
+                        id="zipCode"
+                        value={zipCode}
+                        onChange={(e) => setZipCode(e.target.value)}
+                        className="form-control"
+                    />
+                </div>
             </div>
 
-            <div>
-                <label htmlFor="state">State:</label>
-                <input
-                    type="text"
-                    id="state"
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                />
-            </div>
-
-            <div>
-                <label htmlFor="zipCode">Zip Code:</label>
-                <input
-                    type="text"
-                    id="zipCode"
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
-                />
-            </div>
-
-            <div>
-                <label htmlFor="bio">Bio:</label>
+            <div className="mb-3">
+                <label htmlFor="bio" className="form-label">Bio:</label>
                 <textarea
                     id="bio"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
+                    className="form-control"
                 />
             </div>
 
-            <button onClick={handleSaveChanges}>Save Changes</button>
+            <button onClick={handleSaveChanges} className="btn btn-primary">Save Changes</button>
         </div>
     );
 };

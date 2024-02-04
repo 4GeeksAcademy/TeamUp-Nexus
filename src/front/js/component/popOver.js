@@ -5,6 +5,7 @@ import Popover from 'react-bootstrap/Popover';
 
 const PopOver = ({ placement, title, content }) => {
   return (
+    
     <OverlayTrigger
       trigger="click"
       placement={placement}
@@ -15,7 +16,7 @@ const PopOver = ({ placement, title, content }) => {
         </Popover>
       }
     >
-      <Button variant="secondary" className="btn1 fill">Details</Button>
+      <Button variant="secondary" className="btn1 outline">Details</Button>
     </OverlayTrigger>
   );
 };

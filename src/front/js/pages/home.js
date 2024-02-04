@@ -17,6 +17,7 @@ import lbullets from "../../img/Leftullets.png";
 import rbullets from "../../img/leftside.png";
 import rsoldier from "../../img/ontheright.png";
 import lsodier from "../../img/ontheleft.png";
+import ready from "../../img/ready.png";
 
 import "../../styles/home.css";
 import "../../styles/style.scss";
@@ -66,13 +67,12 @@ export const Home = () => {
 						{<img src={rsoldier} height={500} width= {395} className="soldier1" />}
 						{<img src={lsodier} height={571} width= {431} className="soldier2" />}
 						</div>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
 						
+
+						
+						
+						<br/>
+						{<img src={ready} height={410} width= {487} className="soldier3" />}
 						<div>
 						<h1>Available on the following platforms</h1>
 							<br/>

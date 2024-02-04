@@ -19,7 +19,7 @@ const Learnmore = ({ placement, title, content, onContactClick }) => {
 
   return (
     <OverlayTrigger trigger="click" placement={placement} overlay={popover}>
-      <Button variant="secondary" className="btn1 fill">
+      <Button variant="secondary" className="btn btn-info btn-rounded btn-sm">
         Learn More
       </Button>
     </OverlayTrigger>
