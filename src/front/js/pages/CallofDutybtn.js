@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import Learnmore from '/workspaces/TeamUp-Nexus/src/front/js/component/Learnmore.js';
 import Message from '/workspaces/TeamUp-Nexus/src/front/js/component/SendAmessage.js';
@@ -158,6 +156,9 @@ export const Cod = () => {
               <div className="d-flex justify-content-evenly bottom">
                 <button className="btn btn-outline-success btn-rounded btn-sm" onClick={handleContactClick}>
                   Send Message
+                </button>
+                <button className= " btn btn-outline-primary">
+                  Favorite
                 </button>
                 <Learnmore
                   placement="top"
