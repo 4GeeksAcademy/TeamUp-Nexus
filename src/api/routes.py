@@ -1,24 +1,18 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
- 
+
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User,PlayerProfile
+from api.models import db, User, PlayerProfile
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import jwt_required
-
+from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
 
 api = Blueprint('api', __name__)
 
-
- 
 # Allow CORS requests to this API
 CORS(api)
-
 
 @api.route("/token", methods=["POST"])
 def create_token():
@@ -45,7 +39,7 @@ def sign_up():
     user = User.query.filter_by(email=email).first()
     if user:
         return jsonify("This user already exists"), 409
-    user = User(email = email, password = password, is_active=True, secret_question1 = questions["q1"],secret_question2 = questions["q2"], secret_answer1 = questions["a1"], secret_answer2 = questions["a2"])
+    user = User(email=email, password=password, is_active=True, secret_question1=questions["q1"], secret_question2=questions["q2"], secret_answer1=questions["a1"], secret_answer2=questions["a2"])
     db.session.add(user)
     db.session.commit()
     return jsonify({"msg": "Success"}), 200
@@ -54,39 +48,40 @@ def sign_up():
 @jwt_required()
 def get_hello():
     email = get_jwt_identity()
-    dictionary ={
+    dictionary = {
         "message": "hello " + email
     }
     return jsonify(dictionary)
 
-
 @api.route("/forget-password", methods=["POST"])
 def forgot_password():
     email = request.json.get("email", None)
-    security_questions = request.json.get ("securityQuestions", None)
+    security_questions = request.json.get("securityQuestions", None)
 
     if email is None or security_questions is None:
         return jsonify({"msg": "Please provide a valid email and security questions"}), 400
-    user = User.query.filter_by(email = email).first()
-    if user is None :
+    user = User.query.filter_by(email=email).first()
+    if user is None:
         return jsonify({"msg": "User does not exist"}), 404
 
-    #scenario where they select the questions in the same order as when they signed up and they have the right answer
+    # scenario where they select the questions in the same order as when they signed up and they have the right answer
     if security_questions.q1 == user.secret_question1 and security_questions.a1 == user.secret_answer1:
         if security_questions.q2 == user.secret_question2 and security_questions.a2 == user.secret_answer2:
-            return jsonify({"msg":"success"}),200         
-    #scenario where they invert the order of the questions, but they have the right answers
+            return jsonify({"msg": "success"}), 200
+    # scenario where they invert the order of the questions, but they have the right answers
     elif security_questions.q1 == user.secret_question2 and security_questions.a1 == user.secret_answer2:
         if security_questions.q2 == user.secret_question1 and security_questions.a2 == user.secret_answer1:
-            return jsonify({"msg":"success"}),200
+            return jsonify({"msg": "success"}), 200
     else:
-        return jsonify({"msg":"the information provided does not match our database"}), 409 
+        return jsonify({"msg": "the information provided does not match our database"}), 409
 
-# Favorite Player Profile
-    
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///player_profiles.db'
 db.init_app(app)
+
+# Create the PlayerProfile table
+with app.app_context():
+    db.create_all()
 
 @app.route('/player-profiles', methods=['POST'])
 def create_player_profile():
@@ -116,4 +111,4 @@ def get_player_profiles():
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
