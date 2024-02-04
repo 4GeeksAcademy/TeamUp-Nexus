@@ -207,3 +207,15 @@
     color: #1e2127;
     transform: scale(1);
   }
+
+  .popoverbody1{
+    border-radius: 25px;
+    background-color: #363833;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .popoverbody1{
+    color: #fff;
+  }

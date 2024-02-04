@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import "../../styles/profile.css";
 
 export const Profile = () => {
     const [firstName, setFirstName] = useState("");

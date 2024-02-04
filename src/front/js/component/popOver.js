@@ -12,7 +12,7 @@ const PopOver = ({ placement, title, content }) => {
       overlay={
         <Popover id={`popover-positioned-${placement}`}>
           <Popover.Header as="h3">{title}</Popover.Header>
-          <Popover.Body>{content}</Popover.Body>
+          <Popover.Body className ="popoverbody1">{content}</Popover.Body>
         </Popover>
       }
     >
