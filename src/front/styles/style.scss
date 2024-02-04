@@ -1,0 +1,38 @@
+
+.custom_heading-container {
+    justify-content: flex-end;
+
+    h2 {
+      color: $white;
+
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+
+  .do_section {
+    .content-box {
+      color: $white;
+      text-align: center;
+      padding: 10px 15px;
+      border-radius: 15px;
+      margin: 25px 0;
+  
+      img {
+        height: 70px;
+        margin: 15px;
+      }
+  
+      &.bg-red {
+        background-color: $red;
+      }
+  
+      &.bg-green {
+        background-color: $green2;
+      }
+    }
+  }
+  
+
