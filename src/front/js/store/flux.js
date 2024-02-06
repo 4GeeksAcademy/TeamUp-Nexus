@@ -14,33 +14,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			playerFav:[],
 		},
 		actions: {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
 			syncTokenFromSessionStore: () => {
 				const token = sessionStorage.getItem("token");
 				console.log("Application just loaded, synching the session storage token")
 				if(token && token != "" && token != undefined) setStore({ token: token});
 			},
-
 			logout: () => {
 				sessionStorage.removeItem("token");
 				console.log("You have logged out")
 				setStore({ token: null, message: null});
 			},
-			
-			game: () => {
-				
-			},
-
-			profile: () => {
-
-			},
-
+			game: () => {},
+			profile: () => {},
 			signup: async(email,password, securityQuestions) => {
 				const opts = {
 					method: 'POST',
@@ -60,18 +52,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						alert("There has been an sign up error. response code ",response.status);
 						return false;
 					} 
-				
-						
 					const data = await resp.json();
-						sessionStorage.setItem("token", data.access_token);
-						setStore({ token: data.access_token})
-						return true;
-					}
+					sessionStorage.setItem("token", data.access_token);
+					setStore({ token: data.access_token})
+					return true;
+				}
 				catch(error){
 					console.error("There has been an error signing up")
 				}
 			},
-
 			login: async (email, password) => {
 				const opts = {
 					method: 'POST',
@@ -83,27 +72,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						password: password
 					})
 				};
- 
-			try{
-				const resp = await fetch(process.env.BACKEND_URL+"/api/token", opts)
-				if(resp.status !== 200){
-					alert("There has been a log in error. response code: ", response.status);
-					return false;
-				} 
-			
-					
-				const data = await resp.json();
+				try{
+					const resp = await fetch(process.env.BACKEND_URL+"/api/token", opts)
+					if(resp.status !== 200){
+						alert("There has been a log in error. response code: ", response.status);
+						return false;
+					} 
+					const data = await resp.json();
 					console.log("access token: ",data)  
-					// never do this console log irl
 					sessionStorage.setItem("token", data.access_token);
 					setStore({ token: data.access_token})
 					return true;
 				}
-			catch(error){
-				console.error("There has been an error login in")
-			}
-		},
-				
+				catch(error){
+					console.error("There has been an error login in")
+				}
+			},
 			getMessage: () => {
 				const store = getStore();
 				const opts = {
@@ -116,50 +100,57 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
 			},
-
-			
-forgotPassword: async (email, securityQuestions) => { 
-	const opts = {
-	  method: 'POST',
-	  headers: {
-		"Content-Type": "application/json"
-	  },
-	  body: JSON.stringify({
-		email: email,
-		securityQuestions: securityQuestions
-	  })
-	};
-	
-	try {
-	  const resp = await fetch(process.env.BACKEND_URL + "/api/forgot-password", opts);
-	  if (resp.status !== 200) {
-		alert("There has been a password reset error. Response code: " + resp.status);
-		return false;
-	  }
-	  const data = await resp.json();
-	  // Handle the password reset response data as needed
-	  return true;
-	} catch (error) {
-	  console.error("There has been an error resetting the password", error);
-	  return false;
-	}
-  },
-  
-
-			changeColor: (index, color) => {
-				//get the store
+			forgotPassword: async (email, securityQuestions) => { 
+				const opts = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						securityQuestions: securityQuestions
+					})
+				};
+				try {
+					const resp = await fetch(process.env.BACKEND_URL + "/api/forgot-password", opts);
+					if (resp.status !== 200) {
+						alert("There has been a password reset error. Response code: " + resp.status);
+						return false;
+					}
+					const data = await resp.json();
+					// Handle the password reset response data as needed
+					return true;
+				} catch (error) {
+					console.error("There has been an error resetting the password", error);
+					return false;
+				}
+			},
+			addPlayerProfile: async (username, kd_ratio, level, wins) => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + store.token
+					},
+					body: JSON.stringify({
+						username: username,
+						kd_ratio: kd_ratio,
+						level: level,
+						wins: wins
+					})
+				};
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "/player-profiles", options);
+					if (response.status === 201) {
+						console.log("Player profile created successfully");
+					} else {
+						console.error("Error creating player profile. Response code: ", response.status);
+					}
+				} catch (error) {
+					console.error("An error occurred while creating player profile", error);
+				}
+			},
 		}
 	};
 };

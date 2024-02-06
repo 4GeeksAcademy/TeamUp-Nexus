@@ -185,4 +185,52 @@ export const Cod = () => {
   );
 };
 
+
+// ... (Favorite Player Profile)
+
+const savePlayerProfile = (username, kdRatio, level, wins) => {
+  fetch('/player-profiles', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: username,
+      kd_ratio: kdRatio,
+      level: level,
+      wins: wins,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Player profile saved successfully:', data);
+    })
+    .catch((error) => {
+      console.error('Error saving player profile:', error);
+    });
+};
+
+const fetchPlayerProfiles = () => {
+  fetch('/player-profiles')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Player profiles:', data);
+    })
+    .catch((error) => {
+      console.error('Error fetching player profiles:', error);
+    });
+};
+
+// ... (remaining code)
+
 export default Cod;
