@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/private.css";
-import cardimage1 from "../../img/Card1.png";
+import cardimage1 from "../../img/Callofduty222.png";
 import cardimage2 from "../../img/Card2.png";
 import cardimage3 from "../../img/Card3.png";
 import cardimage4 from "../../img/Card4.png";
@@ -20,7 +20,7 @@ export const Private = () => {
   const cardDetails = [
     {
       id: 1,
-      content: 'This is a great game with great players. The game have absloutely no toxicity or racism or anything like that, we are cool around here 😘',
+      content: '☠️ Call of Duty is a highly popular video game franchise known for its intense first-person shooter gameplay set in various historical and fictional military conflicts. Developed by Activision, the series debuted in 2003 and has since become one of the best-selling and most critically acclaimed video game franchises of all time. ',
       placement: 'top',
       image: cardimage1,
       showAccessButton: true,
