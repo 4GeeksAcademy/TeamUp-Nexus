@@ -6,6 +6,7 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Login } from "./pages/login";
+import { Message } from "./pages/Messages";
 import { ResetPassword } from "./pages/Passreset";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
@@ -40,6 +41,7 @@ const Layout = () => {
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Private />} path="/private" />
+                        <Route element={<Message />} path="/messages" />
                         <Route element={<Profile />} path="/profile" />
                         <Route element={<Logout />} path="/logout" />
                         <Route element={<h1>Not found!</h1>} />

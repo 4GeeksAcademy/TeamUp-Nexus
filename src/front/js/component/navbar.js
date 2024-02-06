@@ -19,7 +19,7 @@ export const Navbar = () => {
         <span className="navbar-brand mb-0 h1" style={{ color: "#fff" }}><img src={Logo} height={120} width={225} /></span>
       </Link>
       {store.token && (
-        // <div className="navbarprivate">
+        
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
             <Link to="/private" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Games</Link>
@@ -31,11 +31,11 @@ export const Navbar = () => {
             <Link to="/messages" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</Link>
           </li>
           <li>
-            <Link to="/search" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Search</Link>
+            <Link to="/search" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/settings" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Settings</Link>
-          </li>
+          </li> */}
         </ul>
         // </div>
       )}
