@@ -10,10 +10,11 @@ import { Message } from "./pages/Messages";
 import { ResetPassword } from "./pages/Passreset";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
-import { Private} from "./pages/private"
-import { Profile } from "./pages/Profile"
-import { Logout } from "./pages/logout"
-import { Cod } from "./pages/CallofDutybtn"
+import { Private} from "./pages/private";
+import { Profile } from "./pages/Profile";
+import { PlayerFav } from "./pages/PlayerFav"; // Note the uppercase "P" in "PlayerFav"
+import { Logout } from "./pages/logout";
+import { Cod } from "./pages/CallofDutybtn";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -42,6 +43,7 @@ const Layout = () => {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Private />} path="/private" />
                         <Route element={<Message />} path="/messages" />
+                        <Route element={<PlayerFav />} path="/playerFav" />
                         <Route element={<Profile />} path="/profile" />
                         <Route element={<Logout />} path="/logout" />
                         <Route element={<h1>Not found!</h1>} />

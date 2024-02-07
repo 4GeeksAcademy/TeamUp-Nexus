@@ -96,19 +96,33 @@ def create_player_profile():
     db.session.commit()
     return jsonify({'message': 'Player profile created successfully'}), 201
 
-@app.route('/player-profiles', methods=['GET'])
-def get_player_profiles():
-    profiles = PlayerProfile.query.all()
+@app.route('/playerFav', methods=['GET'])
+def get_playerFav():
+    favorites = PlayerFav.query.all()
     result = []
-    for profile in profiles:
+    for favorite in favorites:
         result.append({
-            'id': profile.id,
-            'username': profile.username,
-            'kd_ratio': profile.kd_ratio,
-            'level': profile.level,
-            'wins': profile.wins
+            'id': favorite.id,
+            'username': favorite.username,
+            'kd_ratio': favorite.kd_ratio,
+            'level': favorite.level,
+            'wins': favorite.wins
         })
     return jsonify(result)
+
+@app.route('/playerFav', methods=['POST'])
+def save_playerFav():
+    data = request.get_json()
+    username = data.get('username')
+    kd_ratio = data.get('kd_ratio')
+    level = data.get('level')
+    wins = data.get('wins')
+
+    new_favorite = PlayerFav(username=username, kd_ratio=kd_ratio, level=level, wins=wins)
+    db.session.add(new_favorite)
+    db.session.commit()
+
+    return jsonify({'message': 'Favorite player profile saved successfully'})
 
 if __name__ == '__main__':
     app.run(debug=True)

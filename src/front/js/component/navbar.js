@@ -31,7 +31,7 @@ export const Navbar = () => {
             <Link to="/messages" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</Link>
           </li>
           <li>
-            <Link to="/search" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</Link>
+            <Link to="/playerFav" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</Link>
           </li>
           {/* <li>
             <Link to="/settings" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Settings</Link>

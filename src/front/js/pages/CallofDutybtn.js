@@ -188,8 +188,10 @@ export const Cod = () => {
 
 // ... (Favorite Player Profile)
 
+// ... (above code)
+
 const savePlayerProfile = (username, kdRatio, level, wins) => {
-  fetch('/player-profiles', {
+  fetch('/api/playerFav', { // Replace with your actual backend endpoint
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -214,6 +216,9 @@ const savePlayerProfile = (username, kdRatio, level, wins) => {
       console.error('Error saving player profile:', error);
     });
 };
+
+// ... (remaining code)
+
 
 const fetchPlayerProfiles = () => {
   fetch('/player-profiles')
