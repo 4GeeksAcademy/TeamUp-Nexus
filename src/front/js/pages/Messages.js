@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../styles/logout.css";
+import "../../styles/Messages.css";
 
 export const Message = () => {
   const [messageInput, setMessageInput] = useState("");
@@ -46,6 +47,12 @@ export const Message = () => {
   };
 
   return (
+    <div class="form3">
+      <div class="title"> <i class="fa-brands fa-rocketchat"></i>Messages</div>
+      <br/>
+      <br/>
+      <br/>
+    
     <div className="full-page-container">
       <div className="chat-container">
         <div className="chat-messages">
@@ -56,23 +63,27 @@ export const Message = () => {
           ))}
           {isTyping && (
             <div className="chat-bubble received">
-              <span className="sender">Tom:</span> <span className="typing-indicator">...</span>
+              <span className="sender"><i class="fa-regular"></i>Tom:</span> <span className="typing-indicator">...</span>
             </div>
           )}
         </div>
 
-        <div className="chat-input">
+        <div class="input-container1 ic3">
           <input
             type="text"
+            class="text-chatter"
             placeholder="Type your message..."
             value={messageInput}
             onChange={handleInputChange}
           />
-          <button className="send-button" onClick={sendMessage}>
+          <button className="send-button1" onClick={sendMessage}>
             Send
           </button>
+
+
         </div>
       </div>
+    </div>
     </div>
   );
 };

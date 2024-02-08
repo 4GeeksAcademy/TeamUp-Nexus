@@ -55,8 +55,8 @@ export const Private = () => {
   return (
     <div className="row">
       <div className="wrapper2">
-        <div className="bg"> Welcome to Team Nexus Select your Game </div>
-        <div className="fg"> Welcome to Team Nexus Select your Game </div>
+        <div className="bg"> Welcome to TeamUp Nexus <br/> Select your Game </div>
+        <div className="fg"> Welcome to TeamUp Nexus <br/> Select your Game </div>
       </div>
 
       {cardDetails.map((card) => (
