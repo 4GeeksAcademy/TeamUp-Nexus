@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "../../styles/profile.css";
+import "../../styles/Profile.css";
 
 export const Profile = () => {
     const [firstName, setFirstName] = useState("");
@@ -19,99 +19,174 @@ export const Profile = () => {
 
     return (
 
-        <div className="text-center mt-5">
-            <h1>Your Profile</h1>
+        <div className="centered-form">
 
-            <div>
-                <label htmlFor="firstName">First Name:</label>
+            <div class="form2">
+            <div class="title"> <i class="fa-solid fa-user"></i> Your Profile</div>
+
+            <div class="input-container2 ic1">
+
+            
+                
                 <input
+                    id="firstname"
+                    class="input2" 
                     type="text"
-                    id="firstName"
+                    placeholder=" "
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                 />
+                   <div class="cut"></div>
+                   <label for="firstname" class="placeholder1">First name</label>
+                 
+              
+
             </div>
 
-            <div>
-                <label htmlFor="lastName">Last Name:</label>
+
+            <div class="input-container2 ic2">
+
                 <input
                     type="text"
-                    id="lastName"
+                    id="lastname"
+                    class="input2" 
+                    placeholder=" "
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="Lastname" class="placeholder1">Last Name</label>
             </div>
 
-            <div>
-                <label htmlFor="email">Email:</label>
+
+
+
+            <div class="input-container2 ic2">
+
+                
                 <input
                     type="email"
                     id="email"
+                    class="input2" 
+                    placeholder=" "
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
+
+
+                   <div class="cut"></div>
+                   <label for="email" class="placeholder1">Email</label>
             </div>
 
-            <div>
-                <label htmlFor="phoneNumber">Phone Number:</label>
+
+
+            <div class="input-container2 ic2">
+               
                 <input
                     type="tel"
                     id="phoneNumber"
+                    class="input2" 
+                    placeholder=" "
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="phoneNumber" class="placeholder1">Phone Number:</label>
             </div>
 
-            <div>
-                <label htmlFor="streetAddress">Street Address:</label>
+            <div class="input-container2 ic2">
+                
                 <input
                     type="text"
                     id="streetAddress"
+                    class="input2" 
+                    placeholder=" "
                     value={streetAddress}
                     onChange={(e) => setStreetAddress(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="streetAddress" class="placeholder1">Street Address:</label>
+
             </div>
 
-            <div>
-                <label htmlFor="city">City:</label>
+
+            <div class="input-container2 ic2">
+                
                 <input
                     type="text"
                     id="city"
+                    class="input2" 
+                    placeholder=" "
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="city" class="placeholder1">City:</label>
             </div>
 
-            <div>
-                <label htmlFor="state">State:</label>
+            <div class="input-container2 ic2">
+               
                 <input
                     type="text"
                     id="state"
+                    class="input2" 
+                    placeholder=" "
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="state" class="placeholder1">State:</label>
             </div>
 
-            <div>
-                <label htmlFor="zipCode">Zip Code:</label>
+
+
+
+
+            <div class="input-container2 ic2">
+                
                 <input
                     type="text"
                     id="zipCode"
+                    class="input2" 
+                    placeholder=" "
                     value={zipCode}
                     onChange={(e) => setZipCode(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="zipCode" class="placeholder1">Zip Code:</label>
             </div>
 
-            <div>
-                <label htmlFor="bio">Bio:</label>
+
+
+
+
+
+            <div class="input-container2 ic2">
+                
                 <textarea
                     id="bio"
+                    class="input2" 
+                    placeholder=" "
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
                 />
+
+                   <div class="cut"></div>
+                   <label for="bio" class="placeholder1">Bio:</label>
             </div>
 
-            <button onClick={handleSaveChanges}>Save Changes</button>
+
+
+
+            <button onClick={handleSaveChanges}  type="text" class="save">Save Changes</button>
         </div>
+        </div>
+        
     );
 };

@@ -181,7 +181,7 @@
     color: #363833;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: clamp( 2em, 10vw, 6rem);
+    font-size: clamp( 2em, 7vw, 5rem);
     grid-area: overlap;
     letter-spacing: 1px;
     -webkit-text-stroke: 4px transparent;
