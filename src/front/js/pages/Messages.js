@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../../styles/logout.css";
+
+
 import "../../styles/Messages.css";
 
 export const Message = () => {
@@ -47,6 +48,7 @@ export const Message = () => {
   };
 
   return (
+    <div className="centered-form2">
     <div class="form3">
       <div class="title"> <i class="fa-brands fa-rocketchat"></i>Messages</div>
       <br/>
@@ -80,7 +82,7 @@ export const Message = () => {
             Send
           </button>
 
-
+          </div>
         </div>
       </div>
     </div>

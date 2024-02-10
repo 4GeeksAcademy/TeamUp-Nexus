@@ -145,7 +145,7 @@ export const Cod = () => {
                   />
                 </div>
               </div>
-              <div className="card-body justify-content-evenly">
+              <div className="card-body justify-content-evenly" id="trees">
                 <p className="card-title"><i className="fa-solid fa-circle-user"></i><strong>Username: </strong>{`${entry.username || 'N/A'}`}</p>
                 <p className="card-text"><i className="fa-solid fa-percent"></i><strong>K/D Ratio:</strong>{`${entry.values.kdRatio || 'N/A'}`}</p>
                 <p className="card-text">
@@ -154,11 +154,12 @@ export const Cod = () => {
                 <p className="card-text"><i className="fa-solid fa-trophy"> </i><strong>Wins: </strong>{`${entry.values.wins || 'N/A'}`}</p>
               </div>
               <div className="d-flex justify-content-evenly bottom">
+                
                 <button className="btn btn-outline-success btn-rounded btn-sm" onClick={handleContactClick}>
-                  Send Message
+                Message
                 </button>
                 <button className= " btn btn-outline-primary">
-                  Favorite
+                Favorite
                 </button>
                 <Learnmore
                   placement="top"
@@ -175,7 +176,8 @@ export const Cod = () => {
                   onContactClick={handleContactClick}
                 />
               </div>
-            </div>
+              </div>
+          
           ))}
         </div>
       </div>
