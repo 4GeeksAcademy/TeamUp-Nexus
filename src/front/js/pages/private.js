@@ -20,43 +20,43 @@ export const Private = () => {
   const cardDetails = [
     {
       id: 1,
-      content: '☠️ Call of Duty is a highly popular video game franchise known for its intense first-person shooter gameplay set in various historical and fictional military conflicts. Developed by Activision, the series debuted in 2003 and has since become one of the best-selling and most critically acclaimed video game franchises of all time. ',
+      content: '☠️ Call of Duty is a highly popular video game franchise known for its intense first-person shooter gameplay set in various historical and fictional military conflicts. Developed by Activision, the series debuted in 2003 and has since become one of the best-selling and most critically acclaimed video game franchises of all time.',
       placement: 'top',
       image: cardimage1,
       showAccessButton: true,
-      accessRoute: '/callofduty', 
+      accessRoute: '/callofduty',
     },
     {
       id: 2,
-      content: 'Details for Card 2',
+      content: '🔫 Apex Legends is a free-to-play battle royale game developed by Respawn Entertainment and published by Electronic Arts. It features a diverse cast of "Legends," each with unique abilities, and fast-paced gameplay set in the Titanfall universe.',
       placement: 'top',
       image: cardimage2,
-      showAccessButton: false,
-      accessRoute: '/custom-route-for-card-2', 
+      showAccessButton: true,
+      accessRoute: '/apexlegends',
     },
     {
       id: 3,
-      content: 'Details for Card 3',
+      content: '🥷 Escape from Tarkov is a hardcore and realistic online first-person action RPG/Simulator with MMO features and a story-driven walkthrough. It is set in the fictional Norvinsk region in Northwestern Russia, where a war is taking place between two private military companies.',
       placement: 'top',
       image: cardimage3,
-      showAccessButton: false,
-      accessRoute: '/custom-route-for-card-2'
+      showAccessButton: true,
+      accessRoute: '/escapefromtarkov'
     },
     {
       id: 4,
-      content: 'Details for Card 4',
+      content: '🚀 Battlefield 2042 is a first-person shooter video game developed by DICE and published by Electronic Arts. It is the seventeenth installment in the Battlefield series and features large-scale battles with up to 128 players, dynamic weather systems, and various multiplayer modes.',
       placement: 'top',
       image: cardimage4,
-      showAccessButton: false,
-      accessRoute: '/custom-route-for-card-2'
+      showAccessButton: true,
+      accessRoute: '/battlefield2042'
     },
   ];
 
   return (
     <div className="row">
       <div className="wrapper2">
-        <div className="bg"> Welcome to TeamUp Nexus <br/> Select your Game </div>
-        <div className="fg"> Welcome to TeamUp Nexus <br/> Select your Game </div>
+        <div className="bg"> Welcome to TeamUp Nexus <br /> Select your Game </div>
+        <div className="fg"> Welcome to TeamUp Nexus <br /> Select your Game </div>
       </div>
 
       {cardDetails.map((card) => (
