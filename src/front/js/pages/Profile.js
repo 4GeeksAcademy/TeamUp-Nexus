@@ -1,192 +1,117 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/Profile.css";
+import { Modal } from "react-bootstrap";
 
 export const Profile = () => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [streetAddress, setStreetAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [zipCode, setZipCode] = useState("");
-    const [bio, setBio] = useState("");
+  const initialState = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    bio: "",
+    playStyle: "",
+  };
 
-    const handleSaveChanges = () => {
-        
-        console.log("Changes saved:", { firstName, lastName, email, phoneNumber, streetAddress, city, state, zipCode, bio });
-    };
+  const [formData, setFormData] = useState(() => {
+    const storedData = localStorage.getItem("formData");
+    return storedData ? JSON.parse(storedData) : initialState;
+  });
 
-    return (
+  useEffect(() => {
+    localStorage.setItem("formData", JSON.stringify(formData));
+  }, [formData]);
 
-        <div className="centered-form">
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-            <div class="form2">
-            <div class="title"> <i class="fa-solid fa-user"></i> Your Profile</div>
+  const handleSaveChanges = () => {
+    console.log("Changes saved:", formData);
+    
+    setShowPopup(true);
+  };
 
-            <div class="input-container2 ic1">
+  const [showPopup, setShowPopup] = useState(false);
+  const handlePopupClose = () => setShowPopup(false);
 
-            
-                
-                <input
-                    id="firstname"
-                    class="input2" 
-                    type="text"
-                    placeholder=" "
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                   <div class="cut"></div>
-                   <label for="firstname" class="placeholder1">First name</label>
-                 
-              
+ 
+  const capitalizeFirstLetter = (str) => {
+    return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
 
-            </div>
-
-
-            <div class="input-container2 ic2">
-
-                <input
-                    type="text"
-                    id="lastname"
-                    class="input2" 
-                    placeholder=" "
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="Lastname" class="placeholder1">Last Name</label>
-            </div>
-
-
-
-
-            <div class="input-container2 ic2">
-
-                
-                <input
-                    type="email"
-                    id="email"
-                    class="input2" 
-                    placeholder=" "
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-
-
-                   <div class="cut"></div>
-                   <label for="email" class="placeholder1">Email</label>
-            </div>
-
-
-
-            <div class="input-container2 ic2">
-               
-                <input
-                    type="tel"
-                    id="phoneNumber"
-                    class="input2" 
-                    placeholder=" "
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="phoneNumber" class="placeholder1">Phone Number:</label>
-            </div>
-
-            <div class="input-container2 ic2">
-                
-                <input
-                    type="text"
-                    id="streetAddress"
-                    class="input2" 
-                    placeholder=" "
-                    value={streetAddress}
-                    onChange={(e) => setStreetAddress(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="streetAddress" class="placeholder1">Street Address:</label>
-
-            </div>
-
-
-            <div class="input-container2 ic2">
-                
-                <input
-                    type="text"
-                    id="city"
-                    class="input2" 
-                    placeholder=" "
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="city" class="placeholder1">City:</label>
-            </div>
-
-            <div class="input-container2 ic2">
-               
-                <input
-                    type="text"
-                    id="state"
-                    class="input2" 
-                    placeholder=" "
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="state" class="placeholder1">State:</label>
-            </div>
-
-
-
-
-
-            <div class="input-container2 ic2">
-                
-                <input
-                    type="text"
-                    id="zipCode"
-                    class="input2" 
-                    placeholder=" "
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="zipCode" class="placeholder1">Zip Code:</label>
-            </div>
-
-
-
-
-
-
-            <div class="input-container2 ic2">
-                
-                <textarea
-                    id="bio"
-                    class="input2" 
-                    placeholder=" "
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}
-                />
-
-                   <div class="cut"></div>
-                   <label for="bio" class="placeholder1">Bio:</label>
-            </div>
-
-
-
-
-            <button onClick={handleSaveChanges}  type="text" class="save">Save Changes</button>
+  return (
+    <div className="centered-form">
+      <div className="form2">
+        <div className="title">
+          <i className="fa-solid ">🪖🎖️</i> Your Profile
         </div>
-        </div>
-        
-    );
+
+        {Object.keys(formData).map((key) => (
+          <div key={key} className="input-container2 ic2">
+            {key !== "bio" && key !== "playStyle" ? (
+              <input
+                type="text"
+                id={key}
+                className="input2"
+                placeholder=" "
+                value={formData[key]}
+                onChange={handleChange}
+                name={key}
+              />
+            ) : key === "bio" ? (
+              <textarea
+                id={key}
+                className="input2"
+                placeholder=" "
+                value={formData[key]}
+                onChange={handleChange}
+                name={key}
+              />
+            ) : (
+              <select
+                id={key}
+                className="input2"
+                value={formData[key]}
+                onChange={handleChange}
+                name={key}
+              >
+                <option value=""></option>
+                <option value="Tactical">Tactical</option>
+                <option value="Defensive">Defensive</option>
+                <option value="Aggressive">Aggressive</option>
+                <option value="Stealthy">Stealthy</option>
+              </select>
+            )}
+            <div className="cut"></div>
+            <label htmlFor={key} className="placeholder1">
+              {capitalizeFirstLetter(key.replace(/([a-z])([A-Z])/g, "$1 $2"))}
+            </label>
+          </div>
+        ))}
+
+        <Modal show={showPopup} onHide={handlePopupClose} className="custom-modal">
+          <Modal.Header closeButton>
+            <Modal.Title>Your profile has been successfully updated!</Modal.Title>
+          </Modal.Header>
+        </Modal>
+
+        <button
+          onClick={handleSaveChanges}
+          type="button"
+          className="save"
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+  );
 };
+ 

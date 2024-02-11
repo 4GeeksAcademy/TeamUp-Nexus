@@ -1,3 +1,5 @@
+
+
 body {
     align-items: center;
     background-color: #000;
@@ -6,11 +8,11 @@ body {
     height: 100vh;
   }
   
-  .form2 {
+  .form2 { 
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 960px;
+    height: 1000px;
     padding: 20px;
     width: 500px;
   }
@@ -127,4 +129,44 @@ body {
     display: flex;
     justify-content: center;
    
+}
+
+.custom-modal .modal-content {
+  background-color: #15172b; 
+  color: #eee; 
+  border-radius: 12px; 
+}
+
+.custom-modal .modal-header {
+  background-color: #007bff; 
+  color: #15172b; 
+  border-radius: 12px;
+}
+
+.custom-modal .modal-title {
+  background-color: #007bff; 
+  color: #f8f6f6; 
+  border-radius: 12px; 
+}
+
+.custom-modal .modal-body {
+  background-color: #414ff0; 
+  color: #15172b; 
+  border-radius: 155px; 
+}
+
+.custom-modal .modal-footer {
+  background-color: #15172b; 
+  border-top: none; 
+  border-radius: 0 0 10px 10px; 
+}
+
+.custom-modal .btn-primary {
+  background-color: #007bff; 
+  border-color: #007bff; 
+}
+
+.custom-modal .btn-primary:hover {
+  background-color: #0056b3; 
+  border-color: #0056b3; 
 }
