@@ -154,10 +154,10 @@ export const Cod = () => {
                 <p className="card-text"><i className="fa-solid fa-trophy"> </i><strong>Wins: </strong>{`${entry.values.wins || 'N/A'}`}</p>
               </div>
               <div className="d-flex justify-content-evenly bottom">
-                <button className="btn btn-outline-success btn-rounded btn-sm" onClick={handleContactClick}>
-                  Send Message
+                <button className="btn2024" onClick={handleContactClick}>
+                  Message
                 </button>
-                <button className= " btn btn-outline-primary">
+                <button className= " btn2024">
                   Favorite
                 </button>
                 <Learnmore

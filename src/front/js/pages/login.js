@@ -52,7 +52,9 @@ export const Login = () => {
                 </p>
 
 
-                <div className="mb-3">
+                <form className="text-start mx-1 mx-md-4">
+
+                       <div className="mb-3">
                     <div className="input-container mb-3 form-group">
                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <label htmlFor="email"><strong>Email</strong></label>
@@ -88,7 +90,12 @@ export const Login = () => {
                         Forgot Password?
                     </button>
                 </div>
+                </form>
             </div>
+            
         </div>
+        
+        
+       
     );
 };

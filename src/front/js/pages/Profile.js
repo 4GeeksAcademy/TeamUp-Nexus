@@ -48,6 +48,43 @@ export const Profile = () => {
   };
 
   return (
+
+    <div class="row">
+            
+    <div class="col-4"> <aside>
+<p></p>
+<a href="javascript:void(0)">
+<i class="fa-regular fa-user" aria-hidden="true"></i>
+Profile
+</a>
+<a href="javascript:void(0)">
+<i class="fa fa-laptop" aria-hidden="true"></i>
+Security
+</a>
+<a href="javascript:void(0)">
+<i class="fa fa-clone" aria-hidden="true"></i>
+Avatar
+</a>
+<a href="javascript:void(0)">
+<i class="fa-solid fa-message" aria-hidden="true"></i>
+Message Settings
+</a>
+<a href="javascript:void(0)">
+<i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+Game settings
+</a>
+</aside>
+
+<div class="social">
+
+</div></div>
+
+
+
+
+<div class="col-8">
+
+
     <div className="centered-form">
       <div className="form2">
         <div className="title">
@@ -55,7 +92,7 @@ export const Profile = () => {
         </div>
 
         {Object.keys(formData).map((key) => (
-          <div key={key} className="input-container2 ic2">
+          <div key={key} className="input-container2 ic1">
             {key !== "bio" && key !== "playStyle" ? (
               <input
                 type="text"
@@ -111,6 +148,8 @@ export const Profile = () => {
           Save Changes
         </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
