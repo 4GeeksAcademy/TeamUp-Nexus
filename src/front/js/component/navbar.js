@@ -37,7 +37,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/search">
+            <Link to="/playerfav">
             <button className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</button>
             </Link>
           </li>
