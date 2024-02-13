@@ -22,16 +22,24 @@ export const Navbar = () => {
         
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li>
-            <Link to="/private" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Games</Link>
+            <Link to="/private">
+            <button className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Games</button>
+               </Link>
           </li>
           <li>
-            <Link to="/profile" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Profile</Link>
+            <Link to="/profile">
+            <button className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Profile</button>
+            </Link>
           </li>
           <li>
-            <Link to="/messages" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</Link>
+            <Link to="/messages">
+            <button className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Messages</button>
+            </Link>
           </li>
           <li>
-            <Link to="/search" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</Link>
+            <Link to="/search">
+            <button className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Favorites</button>
+            </Link>
           </li>
           {/* <li>
             <Link to="/settings" className="btnnavbar1" style={{ color: "#ffcc66", backgroundColor: "transparent", borderColor: "#ffcc66" }}>Settings</Link>

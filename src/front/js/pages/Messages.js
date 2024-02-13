@@ -47,6 +47,43 @@ export const Message = () => {
   };
 
   return (
+
+    <div class="row">
+            
+    <div class="col-4"> <aside>
+<p></p>
+<a href="javascript:void(0)">
+<i class="fa-regular fa-user" aria-hidden="true"></i>
+Inbox
+</a>
+<a href="javascript:void(0)">
+<i class="fa fa-laptop" aria-hidden="true"></i>
+New Message
+</a>
+<a href="javascript:void(0)">
+<i class="fa fa-clone" aria-hidden="true"></i>
+Delete folder
+</a>
+<a href="javascript:void(0)">
+<i class="fa-solid fa-message" aria-hidden="true"></i>
+Message Settings
+</a>
+<a href="javascript:void(0)">
+<i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+Delete folder
+</a>
+</aside>
+
+<div class="social">
+
+</div></div>
+
+
+
+
+<div class="col-8">
+
+
     <div class="form3">
       <div class="title"> <i class="fa-brands fa-rocketchat"></i>Messages</div>
       <br/>
@@ -85,5 +122,8 @@ export const Message = () => {
       </div>
     </div>
     </div>
+    </div>
+    </div>
+        // This is the end of the code for the chat box
   );
 };
