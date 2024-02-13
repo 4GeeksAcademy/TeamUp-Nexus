@@ -131,6 +131,51 @@
 
 
 
+.custom-modal .modal-content {
+  background-color: #15172B;
+  color: #eee;
+  border-radius: 12px;
+}
+.custom-modal .modal-header {
+  background-color: #007BFF;
+  color: #15172B;
+  border-radius: 12px;
+}
+.custom-modal .modal-title {
+  background-color: #007BFF;
+  color: #F8F6F6;
+  border-radius: 12px;
+}
+.custom-modal .modal-body {
+  background-color: #414FF0;
+  color: #15172B;
+  border-radius: 155px;
+}
+.custom-modal .modal-footer {
+  background-color: #15172B;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+.custom-modal .btn-primary {
+  background-color: #007BFF;
+  border-color: #007BFF;
+}
+.custom-modal .btn-primary:hover {
+  background-color: #0056B3;
+  border-color: #0056B3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
