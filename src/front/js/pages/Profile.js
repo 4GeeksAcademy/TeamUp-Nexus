@@ -66,10 +66,6 @@ Security
 Avatar
 </a>
 <a href="javascript:void(0)">
-<i class="fa-solid fa-message" aria-hidden="true"></i>
-Message Settings
-</a>
-<a href="javascript:void(0)">
 <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
 Game settings
 </a>
