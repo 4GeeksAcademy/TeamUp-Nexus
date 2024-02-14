@@ -25,17 +25,21 @@ export const PlayerFav = () => {
     playerHeader.style.fontWeight = 'bold';
     playerHeader.style.color = '#eee';
     playerHeader.textContent = 'Player';
+    playerHeader.style.width = '150px'; 
 
     const winsHeader = document.createElement('div');
     winsHeader.style.fontWeight = 'bold';
     winsHeader.style.color = '#eee';
     winsHeader.textContent = 'Wins';
-    winsHeader.style.textAlign = 'center'; 
+    winsHeader.style.textAlign = 'right'; 
+    winsHeader.style.flexGrow = '1'; 
 
     const matchesPlayedHeader = document.createElement('div');
     matchesPlayedHeader.style.fontWeight = 'bold';
     matchesPlayedHeader.style.color = '#eee';
     matchesPlayedHeader.textContent = 'Matches Played';
+    matchesPlayedHeader.style.textAlign = 'right'; 
+    matchesPlayedHeader.style.flexGrow = '1';
 
 
     header.appendChild(playerHeader);
@@ -45,38 +49,68 @@ export const PlayerFav = () => {
    
     statsContainer.appendChild(header);
 
+    
+    const usernames = [
+      "CoolGa",
+      "Ninja123",
+      "ProGamer",
+      "GamerGirl",
+      "Xtreme",
+      "Speedy",
+      "Shadow",
+      "Blaze",
+      "Swift",
+      "Sonic",
+      "Cyber",
+      "Techie",
+      "Laser",
+      "Raptor",
+      "Pixel",
+      "Ace",
+      "Ghost",
+      "Zap",
+      "Mystic",
+      "Storm"
+    ];
 
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 0; i < usernames.length; i++) {
       const playerBar = document.createElement('div');
       playerBar.style.display = 'flex';
       playerBar.style.alignItems = 'center';
-      playerBar.style.justifyContent = 'space-between'; // Align items horizontally
+      playerBar.style.justifyContent = 'space-between'; 
       playerBar.style.background = i % 2 === 0 ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.1)';
       playerBar.style.marginBottom = '5px';
       playerBar.style.padding = '10px';
       playerBar.style.borderRadius = '5px';
 
-      // Avatar Image
-      const avatar = document.createElement('img');
-      avatar.src = `https://robohash.org/Player${i}.png?size=50x50`; // Adjust size as needed
-      avatar.alt = `Avatar ${i}`;
-      avatar.style.marginRight = '10px'; // Add some margin between the avatar and player name
 
       const playerName = document.createElement('div');
-      playerName.style.display = 'flex'; // Ensure the player name and avatar are displayed in a row
-      playerName.style.alignItems = 'center'; // Center align the items
-      playerName.appendChild(avatar); // Append the avatar to the player name container
-      playerName.textContent = `Player ${i}`;
+      playerName.style.display = 'flex'; 
+      playerName.style.alignItems = 'center'; 
+      playerName.style.width = '150px'; 
+
+      const avatar = document.createElement('span');
+      avatar.textContent = '🤖'; 
+      // 🤖
+      // 👾
+      avatar.style.marginRight = '5px';
+
+      playerName.appendChild(avatar);  
+
+      const playerNameText = document.createElement('div');
+      playerNameText.textContent = usernames[i];
+      playerName.appendChild(playerNameText);  
 
       const wins = document.createElement('div');
-      wins.style.width = '100px';
-      wins.style.textAlign = 'center';
-      wins.textContent = Math.floor(Math.random() * 10000);
+      wins.style.textAlign = 'right'; 
+      wins.textContent = Math.floor(Math.random() * 500);
+      wins.style.flexGrow = '1'; 
+      wins.style.textAlign = 'right';  
 
       const matchesPlayed = document.createElement('div');
-      matchesPlayed.style.width = '100px';
-      matchesPlayed.style.textAlign = 'right'; // Align matches played to the right
-      matchesPlayed.textContent = Math.floor(Math.random() * 20000);
+      matchesPlayed.style.textAlign = 'right'; 
+      matchesPlayed.textContent = Math.floor(Math.random() * 5000);
+      matchesPlayed.style.flexGrow = '1'; 
 
       playerBar.appendChild(playerName);
       playerBar.appendChild(wins);
@@ -92,7 +126,9 @@ export const PlayerFav = () => {
 
   return (
     <div id="player-fav-container">
-      {/* You can add any additional JSX components or elements here */}
     </div>
   );
 };
+
+export default PlayerFav;
+
