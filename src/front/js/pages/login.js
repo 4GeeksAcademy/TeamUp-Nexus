@@ -57,10 +57,10 @@ export const Login = () => {
                        <div className="mb-3">
                     <div className="input-container mb-3 form-group">
                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <label htmlFor="email"><strong>Email</strong></label>
+                        <label htmlFor="email"><strong>Username</strong></label>
                         <input
                             type="email"
-                            placeholder="Enter Email"
+                            placeholder="Enter Username"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="form-control rounded-3"

@@ -47,10 +47,10 @@ export const Signup = () => {
 
                         <div className="mb-3">
                             <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                            <label htmlFor="email"><strong>Email</strong></label>
+                            <label htmlFor="email"><strong>Username</strong></label>
                             <input
                                 type="text"
-                                placeholder="Enter email"
+                                placeholder="Enter Username"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="form-control rounded-0 rounded"
