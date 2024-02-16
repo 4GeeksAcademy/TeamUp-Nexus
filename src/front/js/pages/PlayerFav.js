@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "../../styles/Favorites.css";
 
 export const PlayerFav = () => {
   useEffect(() => {
@@ -125,10 +126,17 @@ export const PlayerFav = () => {
   }, []);
 
   return (
+
+    <div className="row">
+      <div className="wrapper3">
+        {/* <div className="bg1"> Your Team </div> */}
+        <div className="fg1"> Your Team </div>
+      </div>
+ 
     <div id="player-fav-container">
+    </div>
     </div>
   );
 };
-
 export default PlayerFav;
 
