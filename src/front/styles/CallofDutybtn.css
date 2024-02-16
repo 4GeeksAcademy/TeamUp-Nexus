@@ -535,8 +535,24 @@ background-color: #fa9600;
 
 
 
+.modal-header{
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#070707, #3b3851 50%,#141717);
+  background-color: rgba(39, 39, 39, 0.75);
+
+}
 
 
+.modal-body{
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#070707, #3b3851 50%,#141717);
+  background-color: rgba(39, 39, 39, 0.75);
+
+}
+
+.modal-header .btn-close{
+  background-color: #00fffb;
+}
 
 
 

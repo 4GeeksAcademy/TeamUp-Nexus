@@ -109,13 +109,24 @@ export const Home = () => {
                                 <div className="col">
                                     <div className="card custom-card-class">
                                         <img src={twoset3} style={{ borderRadius: '15px' }} />
+
+
+                                        
                                     </div>
+
+
                                 </div>
                             </div>
-                        </div>
+                        </div>    
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
     );
 };
